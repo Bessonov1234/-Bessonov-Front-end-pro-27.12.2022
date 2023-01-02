@@ -6,4 +6,4 @@ let Age = "years old you,"
 let City = "and you from"
 
 
-console.log(`${Hello} ${userName} ${userAge} ${Age} ${City} ${userCity}`);
+// console.log(`${Hello} ${userName} ${userAge} ${Age} ${City} ${userCity}`);
