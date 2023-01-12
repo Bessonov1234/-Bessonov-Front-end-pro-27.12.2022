@@ -3,37 +3,52 @@ let question = prompt(`What action you want to do
 let one = +prompt(`Give the number`);
 let two = +prompt(`Give the number`);
 
-// if (two && one) {
-//  alert(`Вибачте але ви не ввели число`)
 
-// }
-
+// ! Знаки
 if (question === `+`) {
   console.log(one + two);
-}
-
-if (question === `+`) {
-  console.log(one + two);
-}
+}else{
 if (question === `-`) {
-  console.log(one - two);
-}
-if (question === `*`) {
-  console.log(one * two);
-}
-if (question === `/`) {
-  console.log(one / two);
+    console.log(one - two);
+  }else{
+    if (question === `*`) {
+    console.log(one * two);
+    }else{
+    if (question === `/`) {
+    console.log(one / two);
+    }
+  }
+  }
 }
 
+// ! Слова
 if (question === `add`) {
   console.log(one + two);
-}
+}else{
 if (question === `sub`) {
-  console.log(one - two);
+    console.log(one - two);
+  }else{
+    if (question === `mult`) {
+    console.log(one * two);
+    }else{
+    if (question === `div`) {
+    console.log(one / two);
+    }
+  }
+  }
 }
-if (question === `mult`) {
-  console.log(one * two);
-}
-if (question === `div`) {
-  console.log(one / two);
-}
+  
+
+
+// if (question === `add`) {
+//   console.log(one + two);
+// }
+// if (question === `sub`) {
+//   console.log(one - two);
+// }
+// if (question === `mult`) {
+//   console.log(one * two);
+// }
+// if (question === `div`) {
+//   console.log(one / two);
+// }
