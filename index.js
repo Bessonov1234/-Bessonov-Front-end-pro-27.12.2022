@@ -40,15 +40,3 @@ if (question === `sub`) {
   
 
 
-// if (question === `add`) {
-//   console.log(one + two);
-// }
-// if (question === `sub`) {
-//   console.log(one - two);
-// }
-// if (question === `mult`) {
-//   console.log(one * two);
-// }
-// if (question === `div`) {
-//   console.log(one / two);
-// }
