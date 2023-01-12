@@ -3,7 +3,7 @@ let question = prompt(`What action you want to do
 let one = +prompt(`Give the number`);
 let two = +prompt(`Give the number`);
 
-
+// 
 // ! Знаки
 if (question === `+`) {
   console.log(one + two);
