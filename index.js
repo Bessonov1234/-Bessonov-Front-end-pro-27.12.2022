@@ -1,51 +1,53 @@
-let age = +prompt(`How old are you ?`);
-let city = prompt(`Where are you from `);
-let sport = prompt(`What is your favorite sport ?`);
-let sportmanVolleyball = `Мартиненко Олександр Євгенович`;
-let sportmanFootball = `Лионе́ль Андре́с Ме́сси Куччитти́ни`;
-let sportmanWeight = `Чумак Дмитро Віталійович`;
+// ! №1
+let i = 20;
 
-// ! Частина 1
+while (i <= 30) {
+  console.log(i);
+  i += 0.5;
+}
 
-if (city == `Лондон` || city == `Київ` || city == `Вашингтон`) {
-  alert(`"Круто тобі ${age}! Ти живеш у столиці ${city} `);
-  console.log(`"Круто тобі ${age}! Ти живеш у столиці ${city} `);
-} else {
-  if (city) {
-    alert(`Тобі ${age}! Ти живеш у місті ${city} `);
-    console.log(` Тобі ${age}! Ти живеш у місті ${city} `);
+// ! №2
+
+let doll = 27;
+let plus = 0;
+
+for (let i = 0; i < 10; i++) {
+  plus += 10;
+  doll *= plus;
+  console.log(doll);
+  doll /= plus;
+}
+
+// ! №3
+
+let n = +prompt("Введіть ціле число");
+
+for (let i = 1; i <= 100; i++) {
+  //   debugger;
+  if (i ** 2 <= n) {
+    console.log(i);
   } else {
   }
 }
+// ! №4
 
-// ! Частина 2
-
-if (sport === `Волейбол`) {
-  alert(`"Круто! Хочеш стати як ${sportmanVolleyball}? `);
-  console.log(`"Круто! Хочеш стати як ${sportmanVolleyball}?`);
-} else {
-  if (sport === `Футбол`) {
-    alert(`"Круто! Хочеш стати як ${sportmanFootball}? `);
-    console.log(`"Круто! Хочеш стати як ${sportmanFootball}?`);
-  } else {
-    if (sport === `Важка атлетика`) {
-      alert(`"Круто! Хочеш стати як ${sportmanWeight}? `);
-      console.log(`"Круто! Хочеш стати як ${sportmanWeight}?`);
+for (let number = 2; number <= 30; number++) {
+  let isPrime = true;
+  for (let i = 2; i <= number - 1; i++) {
+    if (number % i === 0) {
+      isPrime = false;
+      continue;
     }
   }
+  if (isPrime) console.log(number);
 }
+// ! №5
 
-if (city === null || city == ``) {
-  alert(`Шкода, що Ви не захотіли ввести свій(ю) Місце`);
-  console.log(`Шкода, що Ви не захотіли ввести свій(ю) Місце`);
-}
-
-if (age == 0 || age === false) {
-  alert(`Шкода, що Ви не захотіли ввести свій(ю) рік `);
-  console.log(`Шкода, що Ви не захотіли ввести свій(ю) рік `);
-}
-
-if (sport === null || sport == ``) {
-  alert(`Шкода, що Ви не захотіли ввести свій(ю) улюблений вид спорту `);
-  console.log(`Шкода, що Ви не захотіли ввести свій(ю) улюблений вид спорту `);
-}
+// let num = 81;
+// for (let i = 1; 3 ** i <= num; i++) {
+//   if (3 ** i !== num) {
+//     continue;
+//   } else {
+//     console.log("The possible num can be: " + 3 ** i);
+//   }
+// }
