@@ -1,19 +1,9 @@
-function makeCounter() {
-  let count = 0;
-  return function(num) {
-    return console.log(count += num); ;
-  };
+function pow(num = +prompt(" Число"), degree = +prompt(" Ступінь")) {
+  if (isNaN(degree) || isNaN(num) || num == null || degree == null) {
+    return pow();
+  }
+  // let result;
+  return console.log(num ** degree);
 }
 
-let counter = makeCounter();
-
-// console.log(makeCounter)
-counter(3)
-counter(5)
-counter(20)
-
-
-
-
-
-
+pow();
