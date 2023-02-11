@@ -1,27 +1,48 @@
-// ! 9
+// ! # 11
 
-const array = [1, 2, 3, 4, 5, 6, 7];
-
-function removeElement(array, item) {
-  // ? item Видаяляє елемент за індексом
-  let result = array.splice(item, 1);
-  // console.log(result);
-  console.log(array);
-}
-removeElement(array, 2);
-
-// ! 10
-
-function generateKey(length, characters) {
-  let result = "";
-
-  for (let i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * length));
+function numExpDigit(x, n) {
+  if (n === 1) {
+    return x;
+  } else {
+    return x * numExpDigit(x, n - 1);
   }
-  return result;
 }
 
-const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
-const key = generateKey(16, characters);
+console.log(numExpDigit(2, 10));
 
-console.log(key);
+console.log(numExpDigit(7, 5));
+console.log(numExpDigit(2, 5));
+
+
+// ! # 12
+
+// function sumOfSquares(num) {
+//   function sum(currentSum = 0) {
+//     // console.log(n);
+//     return console.log(currentSum + num);
+//   }
+//   // sum(num);
+// }
+
+// console.log(sumOfSquares(5));
+// sumOfSquares(5);
+// sumOfSquares(5);
+
+
+// function makeCounter() {
+//   let count = 0;
+//   return function() {
+//     return count++;
+//   };
+// }
+
+// let counter = makeCounter();
+
+// // console.log(makeCounter)
+
+// console.log(counter())
+// console.log(counter())
+// console.log(counter())
+// console.log(counter())
+
+// console.log(counter())
