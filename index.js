@@ -1,48 +1,72 @@
-// ! # 11
+// ! 1
 
-function numExpDigit(x, n) {
-  if (n === 1) {
-    return x;
-  } else {
-    return x * numExpDigit(x, n - 1);
+function sumArray(arr) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] == "number") {
+      result.push(arr[i]);
+    }
   }
+  console.log(result);
+  return console.log(
+    result.reduce((accamulator, team) => accamulator + team) / 2
+  );
 }
 
-console.log(numExpDigit(2, 10));
+let array = ["string", 5, 6, true, undefined, null, {}, 5, 13, 75, 52];
 
-console.log(numExpDigit(7, 5));
-console.log(numExpDigit(2, 5));
+sumArray(array);
+
+// ! 2
+function doMath(
+  x = +prompt(" Число"),
+  y = +prompt(" Число"),
+  znak = prompt(" Що ви хочете зробити з цими числами ? ")
+) {
+  if (
+    isNaN(x) ||
+    isNaN(y) ||
+    y == null ||
+    x == null ||
+    y == undefined ||
+    x == undefined
+  ) {
+    return doMath();
+  }
+  switch (znak) {
+    case "-":
+      console.log(x - y);
+      alert(x - y)
+      break;
+    case "+":
+      console.log(x + y);
+      alert(x + y)
+
+      break;
+
+    case "/":
+      console.log(x / y);
+      alert(x / y)
+
+      break;
+    case "%":
+      console.log(x % y);
+      alert(x % y)
+
+      break;
+
+    case "^":
+      console.log(x ** y);
+      alert(x ** y)
+      break;
+    default:
+      console.log("default");
+      alert("Вибачте ви щось ввели не правильно. Будь-ласка повторіть спробу!");
+      return doMath();
+  }
+}
+doMath();
+
+// ! 3 
 
 
-// ! # 12
-
-// function sumOfSquares(num) {
-//   function sum(currentSum = 0) {
-//     // console.log(n);
-//     return console.log(currentSum + num);
-//   }
-//   // sum(num);
-// }
-
-// console.log(sumOfSquares(5));
-// sumOfSquares(5);
-// sumOfSquares(5);
-
-
-// function makeCounter() {
-//   let count = 0;
-//   return function() {
-//     return count++;
-//   };
-// }
-
-// let counter = makeCounter();
-
-// // console.log(makeCounter)
-
-// console.log(counter())
-// console.log(counter())
-// console.log(counter())
-// console.log(counter())
-
-// console.log(counter())
