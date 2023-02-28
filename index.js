@@ -173,3 +173,6 @@ john.present();
 john.absent();
 john.absent();
 john.summary();
+
+
+// const a = document.querySelector('div')
