@@ -1,0 +1,123 @@
+ .global {
+  max-width: 100%;
+  background-color: grey;
+}
+.conteiner {
+  margin: 0 auto;
+  max-width: 1440px;
+  position: relative;
+}
+.between {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100vh;
+  background-color: rgb(167, 167, 43);
+
+}
+.catalog {
+  border: 2px solid #000 ;
+}
+.catalog__prod {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+ flex-direction: column;
+ align-items: center;
+ font-size: 18px;
+ gap: 50px;
+ padding: 10px;
+ color: green;
+ border: 2px solid #000 ;
+ cursor: pointer;
+ margin: 50px 0;
+}
+
+p{
+
+}
+.catalog__boots__company {
+  border: 2px solid #000;
+  background-color: antiquewhite;
+  font-size: 20px;
+
+}
+
+img{
+  width: 200px;
+  cursor: pointer;
+}
+.product {
+  /* border: 2px solid #000; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+ padding: 40px;
+  gap: 20px;
+  height: 100px;
+  overflow-y: hidden;
+
+}
+.buy {
+  border: 2px solid #000;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+ padding: 50px;
+
+  height: 160px;
+  overflow-y: hidden;
+} 
+
+.Product__name{
+  border: 2px solid #000;
+}
+.button{
+margin-bottom: 100px;
+}
+.Product__name:hover{
+  cursor: pointer;
+  background-color:#0045 ;
+}
+.pop__up{
+  position: absolute;
+  left: 40%;
+  top: 100px;
+  background: #fff;
+  width: 300px;
+  min-height: 300px;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center
+}
+.pop__up__text{
+  display: block;
+  margin-top: 20px
+}
+ .fa-solid{
+  color: red;
+  font-size: 22px;
+  cursor: pointer;
+ }
+
+ .form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ }
+input{
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+input:checked{
+  border: 1px solid blue;
+  
+}
+ .form .form__data{
+  display: block;
+ }
+ .form__button{
+  margin: 10px;
+ }
