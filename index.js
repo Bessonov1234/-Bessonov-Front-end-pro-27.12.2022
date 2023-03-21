@@ -83,7 +83,6 @@ function oneOnAll() {
   catalog.addEventListener("click", (e) => {
     const target = e.target;
     const clickTarget = target.innerText;
-    // console.log(products[clickTarget]);
 
     for (let i = 0; i < products[clickTarget].length; i++) {
       console.log(products[clickTarget][i].name);
@@ -109,20 +108,15 @@ function product() {
     const productTarget = e.target;
     const clickTargetProduct = productTarget.innerText;
     console.log(clickTargetProduct);
-    // console.log(products.length);
-    // console.log(oneOnAll());
-    // console.log(clickTargetProduct == oneOnAll());
-    // console.log(products[oneOnAll()]);
+  
     buy();
     function buy() {
       let i = 0;
       for (i; i < 3; i++) {
         for (key in products) {
           console.log(key);
-          // console.log(products[key][clickTargetProduct]);
           console.log(products[key][i]);
           console.log(products[key][i].name);
-          // console.log(products[clickTarget][i].name);
           console.log(clickTargetProduct);
           if (products[key][i].name == clickTargetProduct) {
             const divBuy = creatEL("div");
@@ -132,7 +126,6 @@ function product() {
             `;
             buyButton.style.display = "block";
             buyButton.innerText = `${products[key][i].price}$`;
-            // <button>Buy on ${products[key][i].price} $</button style = "background=green">
             buyProduct.prepend(buyButton);
             buyProduct.prepend(divBuy);
             popUp.style.display = "none";
