@@ -64,8 +64,6 @@ const products = {
   ],
 };
 
-const iterration = products.shoes;
-// console.log(iterration);
 const arr = Object.entries(products);
 const catalog = getEl(".catalog");
 const productInfo = getEl(".product");
@@ -85,7 +83,6 @@ function oneOnAll() {
     const clickTarget = target.innerText;
 
     for (let i = 0; i < products[clickTarget].length; i++) {
-      console.log(products[clickTarget][i].name);
       const divProd = creatEL("div");
       divProd.innerText = products[clickTarget][i].name;
       divProd.style.cssText = `
@@ -96,7 +93,6 @@ function oneOnAll() {
       `;
       productInfo.prepend(divProd);
     }
-    console.log(products[clickTarget]);
     return products[clickTarget];
   });
 }
@@ -107,34 +103,26 @@ function product() {
   productInfo.addEventListener("click", (e) => {
     const productTarget = e.target;
     const clickTargetProduct = productTarget.innerText;
-    console.log(clickTargetProduct);
-  
+
     buy();
     function buy() {
       let i = 0;
       for (i; i < 3; i++) {
         for (key in products) {
-          console.log(key);
-          console.log(products[key][i]);
-          console.log(products[key][i].name);
-          console.log(clickTargetProduct);
           if (products[key][i].name == clickTargetProduct) {
             const divBuy = creatEL("div");
-            console.log(products[key][i].price);
-            console.log(products[key][i].description);
             divBuy.innerHTML = `<span>${products[key][i].description}</span>
             `;
             buyButton.style.display = "block";
             buyButton.innerText = `${products[key][i].price}$`;
             buyProduct.prepend(buyButton);
             buyProduct.prepend(divBuy);
-            popUp.style.display = "none";
+            // popUp.style.display = "none";
             buyButton.addEventListener("click", (e) => {
               popUp.style.zIndex = "999";
               popUp.style.display = "block";
               conteiner.style.opacity = "0.2";
               conteiner.style.filter = "blur(10px)";
-              console.log(true);
             });
           }
         }
@@ -143,3 +131,68 @@ function product() {
   });
 }
 
+// ! Form code
+
+const form = getEl("#form__reg");
+const buttonform = getEl("#button__submit");
+const endPay = getEl(".end__pay");
+const name = form.name;
+const lastname = form.lastname;
+const number = form.number;
+const selectCity = form.city;
+const selecDepartment = form.department;
+const selectPay = form.payment;
+const divForForm = creatEL("div");
+function validationForStringLength(value, length) {
+  return value.length >= length;
+}
+function validationForValue(value) {
+  return !!value.trim();
+}
+const inputs = [
+  {
+    inputEl: name,
+    name: "name",
+    validationRules: [validationForStringLength, validationForValue],
+    isValid: false,
+    maxLengthValidatoin: 2,
+  },
+  {
+    inputEl: lastname,
+    name: "lastname",
+    validationRules: [validationForStringLength, validationForValue],
+    isValid: false,
+    maxLengthValidatoin: 3,
+  },
+];
+function pay() {
+  selectPay.addEventListener("change", (e) => {
+    const targetPay = e.target.value;
+    return console.log(targetPay);
+  });
+}
+
+buttonform.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const allValidationForm = inputs.map((el) => {
+    const allValidation = el.validationRules.map((meFunc) => {
+      return meFunc(el.inputEl.value, el.maxLengthValidatoin);
+    });
+    return allValidation.every((el) => el == true);
+  });
+  function endPayProduct() {
+    divForForm.className = "end_order";
+    divForForm.innerText = `The goods are already eating in the city ${selectCity.value}, in ${selecDepartment.value}  ${selectPay.value}, count ${number.value} `;
+    endPay.prepend(divForForm);
+    popUp.style.display = "none";
+    conteiner.style.opacity = "1";
+    conteiner.style.filter = "blur(0px)";
+  }
+
+  if (allValidationForm.every((el) => el == true)) {
+    endPayProduct();
+  } else {
+    alert("Ви щось робете не так первірте правельність своєї форми");
+  }
+});

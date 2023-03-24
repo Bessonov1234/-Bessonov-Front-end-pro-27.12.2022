@@ -34,6 +34,7 @@
           <div class="buy">
             <button class="button"></button>
           </div>
+          <div class="end__pay"></div>
         </div>
         <div class="pop__up">
           <button
@@ -49,22 +50,68 @@
           >
           <form action="" class="form" id="form__reg">
             <label for="">
-              <span class="form__data">Name</span>
-              <input type="text" name="Name" />
+              <span class="form__data"
+                >Name <span class="rules_input">(не менше 2-х букв)</span></span
+              >
+              <input type="text" name="name" placeholder="John" />
             </label>
             <label for="">
-              <span class="form__data">Lastname</span>
-              <input type="text" name="Lastname" />
+              <span class="form__data"
+                >Lastname<span class="rules_input"
+                  >(не менше 3-х букв)</span
+                ></span
+              >
+              <input type="text" name="lastname" placeholder="Cupert" />
             </label>
-            <label for="">
-              <span class="form__data">Email</span>
-              <input type="Email" name="Email" />
-            </label>
-            <label for="">
-              <span class="form__data">Phone</span>
-              <input type="text" name="Phone" />
-            </label>
-            <button type="submit" class="form__button">Submit</button>
+            <div class="select">
+              <div class="city">
+                <label for="">
+                  <select name="city" id="#city__ukr">
+                    <option value="Odesa" id="1">Odesa</option>
+                    <option value="Kharkiv" id="2">Kharkiv</option>
+                    <option value="Lviv" id="3">Lviv</option>
+                  </select>
+                </label>
+              </div>
+              <div class="department">
+                <label for="">
+                  <select name="department" id="">
+                    <option value="department№1">department№1</option>
+                    <option value="department№2">department№2</option>
+                    <option value="department№3">department№3</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+            <div class="select_pay">
+              <label for="">
+                <span style="font-size: 22px">Choise pay:</span>
+                <select name="payment" id="by_pay" class="payment_choise">
+                  <option value="payment on arrival">payment on arrival</option>
+                  <option value="payment by card">payment by card</option>
+                </select>
+              </label>
+
+              <div class="count_produts">
+                <span> specify the number of</span>
+                <label for="">
+                  <input
+                    type="number"
+                    class="count_produts__input"
+                    name="number"
+                    value="1"
+                  />
+                </label>
+              </div>
+            </div>
+            <div class="story">
+              <span class="story__title">Your massenges</span>
+
+              <textarea name="story" id="story" cols="30" rows="10"> </textarea>
+            </div>
+            <button type="submit" class="form__button" id="button__submit">
+              Submit
+            </button>
           </form>
         </div>
       </div>

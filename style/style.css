@@ -10,9 +10,14 @@
 .between {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 100vh;
+  grid-template-rows: 70vh 30vh;
   background-color: rgb(167, 167, 43);
 
+}
+
+.end__pay{
+  border: 2px solid #000 ;
+grid-column: 1/4;
 }
 .catalog {
   border: 2px solid #000 ;
@@ -77,10 +82,10 @@ margin-bottom: 100px;
 }
 .pop__up{
   position: absolute;
-  left: 40%;
+  left: 30%;
   top: 100px;
   background: #fff;
-  width: 300px;
+  min-width: 300px;
   min-height: 300px;
   border-radius: 15px;
   padding: 20px;
@@ -100,6 +105,7 @@ margin-bottom: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 20px;
  }
 input{
   padding: 5px;
@@ -113,3 +119,66 @@ input{
  .form__button{
   margin: 10px;
  }
+.rules_input{
+  font-size:13px;
+}
+ .select{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  margin: 10px 0;
+ }
+ .radio{
+  border: 2px solid #000;
+  padding: 5px;border-radius: 5px;
+ }
+ .select_pay{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 10px;
+ }
+ .payment_choise{
+  padding: 5px;
+  font-size: 20px;
+  border: 1px solid green;
+
+ }
+ .story__title{
+  display: block;
+ }
+
+ .count_produts__input{
+  width: 40px;
+  height: 20px;
+ }
+
+ .end_order{
+border: 2px solid rgb(49, 91, 49);
+background-color: rgba(58, 63, 54, 0.686);
+border-radius: 10px;
+padding: 15px;
+width: 500px;
+height: 500px;
+color: #fff;
+font-size: 22px;
+animation-iteration-count: 1;
+animation-name: order ;
+animation-duration: 5s ;
+animation-fill-mode: forwards;
+ }
+@keyframes order{
+  0%{
+    opacity: 1;
+  } 
+  50%{
+    opacity: 1;
+    
+  }
+   100%{
+    opacity: 0.0;
+    
+  }
+}
