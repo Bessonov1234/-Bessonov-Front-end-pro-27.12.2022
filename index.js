@@ -1,178 +1,63 @@
-class Student {
-  constructor(name, lastname, age, assessments) {
-    this.name = name;
-    this.lastname = lastname;
-    this.age = age;
-    this.assessments = assessments;
-    this.Attendance = [];
-  }
-
-  present() {
-    const present = this.Attendance;
-    present.push(true);
-    if (present.length <= 25) {
-      // console.log(present);
+const API_URL = "https://jsonplaceholder.typicode.com/comments";
+const getEl = (select) => document.querySelector(select);
+const creatEL = (select) => document.createElement(select);
+const numberId = getEl("#search_id_post");
+const validInput = getEl(".text_sub_search");
+const buttn = getEl(".button__submit");
+const addPost = getEl(".add__post");
+const giveComment = creatEL("button");
+giveComment.className = "give_comments";
+giveComment.innerHTML = "Chekc commen";
+addPost.prepend(giveComment);
+addPost.style.display = "none";
+giveComment.style.display = "none";
+function valid() {
+  buttn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (validInputForNumber()) {
+      validInput.style.display = "none";
     } else {
-      present.unshift();
+      validInput.style.display = "inline-block";
     }
-    return present;
-  }
-  absent() {
-    const present = this.Attendance;
-    present.push(false);
-    if (present.length <= 25) {
-      // console.log(present);
-    } else {
-      present.unshift();
-    }
-    return present;
-  }
-  average() {
-    let result = this.assessments.split(" ");
-    let count = 0;
-    let arr = [];
-    result.forEach((el) => {
-      arr.push(el - 0);
-      count++;
-    });
-    return arr.reduce((accamulator, team) => accamulator + team) / count;
-  }
-
-  summary() {
-    let summaryPt = this.Attendance;
-    let count = 0;
-    if (summaryPt.length <= 25) {
-    } else {
-      summaryPt.length = 25;
-    }
-
-    for (let i = 0; i <= summaryPt.length; i++) {
-      if (summaryPt[i] == true) {
-        count += 1;
+    function validInputForNumber() {
+      if (numberId.value > 500 || numberId.value < 1) {
+        validInput.style.display = "inline-block";
       } else {
+        return numberId.value ? !isNaN(+numberId.value) : false;
       }
     }
-    let result = count / summaryPt.length;
-    console.log(result);
-    // console.log(this.average());
+    axios
+      .get(API_URL)
+      .then((res) => {
+        getProduct(res.data);
+      })
+      .catch((e) => {
+        alert(`${e} invalid this object`);
+      });
 
-    if (result > 0.9 && this.average() > 90) {
-      return console.log("Молодець");
+    function getProduct(array) {
+      for (let i = 0; i < array.length; i++) {
+        if (array[i].id == numberId.value) {
+          addPost.style.display = "grid";
+          addPost.innerHTML = `
+          <div>id: ${array[i].id}
+          <div>Name: ${array[i].name}</div></div>
+          <div> Email:${array[i].email}</div> 
+          `;
+          giveComment.style.display = "block";
+          addPost.append(giveComment);
+        } 
+        giveComment.addEventListener("click", (e) => {
+          addPost.innerHTML = `
+          <div>id: ${array[i].id}
+          <div>Name: ${array[i].name}</div></div>
+          <div> Email:${array[i].email}</div> 
+          <div> Comment:${array[i].body}</div> 
+          `;
+        });
+      }
     }
-    if (result < 0.9 && this.average() < 90) {
-      console.log("Редиска");
-    } else {
-      return console.log("Молодець, але можешь краще");
-    }
-  }
-
-  ageStudents() {
-    console.log(`Me name is ${this.name},and I am ${this.age} years old . `);
-  }
-
-  averageScoreStudents() {
-    console.log(`I have average score  ${this.average()}`);
-  }
+  });
 }
 
-// ! 1 student Молодець
-
-let petro = new Student(
-  "Petro",
-  "Mogila",
-  20,
-  "100 90 100 100 100 100 100 100 100"
-);
-
-petro.ageStudents();
-petro.averageScoreStudents();
-petro.present();
-petro.present();
-petro.present();
-petro.present();
-petro.present();
-petro.present();
-petro.present();
-petro.present();
-petro.present();
-petro.present();
-petro.present();
-petro.present();
-petro.present();
-petro.present();
-petro.present();
-petro.present();
-petro.absent();
-petro.absent();
-petro.present();
-petro.present();
-petro.present();
-petro.present();
-petro.present();
-petro.present();
-petro.present();
-petro.present();
-petro.absent();
-petro.absent();
-petro.summary();
-
-// ! Студент №2 Молодець але моешь краще
-
-let pasha = new Student(
-  "Pasha",
-  "Mogila",
-  30,
-  "100 90 100 100 100 100 100 100 10"
-);
-
-pasha.ageStudents();
-pasha.averageScoreStudents();
-
-pasha.absent();
-pasha.absent();
-pasha.present();
-pasha.present();
-pasha.present();
-pasha.present();
-pasha.present();
-pasha.present();
-pasha.present();
-pasha.present();
-pasha.present();
-pasha.present();
-pasha.present();
-pasha.present();
-pasha.present();
-pasha.present();
-pasha.present();
-pasha.present();
-pasha.present();
-pasha.present();
-pasha.summary();
-
-// ! Студент №3 Редиска
-
-let john = new Student(
-  "John",
-  "Mogila",
-  35,
-  "100 90 100 100 100 100 100 100 10"
-);
-
-john.ageStudents();
-john.averageScoreStudents();
-john.present();
-john.present();
-john.absent();
-john.absent();
-john.absent();
-john.absent();
-john.absent();
-john.present();
-john.present();
-john.absent();
-john.absent();
-john.summary();
-
-
-// const a = document.querySelector('div')
+valid();

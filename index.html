@@ -2,27 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hw14</title>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Posts</title>
   </head>
   <body>
+    <section class="post">
+      <div class="post__conteiner">
+        <div class="wrapper__post">
+          <div class="post__form">
+            <form action="" class="form" id="form_search_post">
+              <label for="">
+                <span class="title__input">Search post №</span>
+                <input
+                  type="text"
+                  class="post_number"
+                  id="search_id_post"
+                  required
+                  placeholder="Only number"
+                />
+                <span class="text_sub_search"
+                  >Only number and starting from №1 to №500</span
+                >
+              </label>
+              <button type="submit" class="button__submit">Search</button>
+            </form>
+          </div>
+          <div class="add__post">
+            <!-- <button class="give_comments">Chekc comment</button> -->
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div  class="menu"></div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./index.js"></script>
-
-
-
-           
-
-
-
-
-
-
-
-
-
-
   </body>
 </html>
