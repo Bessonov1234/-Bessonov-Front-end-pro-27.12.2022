@@ -1,0 +1,27 @@
+.products {
+  grid-column: 2/4;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  background-color: #245869;
+  padding: 60px;
+}
+
+.products__shoes_1 {
+  background-image: url(../images/photo_shoes_3.webp);
+  width: 500px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.products__shoes_2 {
+  background-image: url(../images/photo_shoes_3.webp);
+  width: 500px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.products__shoes_3 {
+  background-image: url(../images/photo_shoes_3.webp);
+  width: 500px;
+  background-repeat: no-repeat;
+  background-position: center;
+}

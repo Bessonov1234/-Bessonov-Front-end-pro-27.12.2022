@@ -1,0 +1,12 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  background-color: aqua;
+  align-items: center;
+  padding: 50px;
+}
+span{
+  font-size: 22px;
+  cursor: pointer;
+}
