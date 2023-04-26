@@ -3,7 +3,7 @@ import classes from "./Emoji.module.scss";
 import { useState } from "react";
 import Smiles from "./Smiles/Smiles";
 import { v4 as uuidv4 } from "uuid";
-
+console.log(smilesData.smileys);
 const EmojiRank = () => {
   const [emojiData, setEmojiData] = useState(smilesData);
   const listemojiData = emojiData.smileys;
@@ -18,16 +18,16 @@ const EmojiRank = () => {
     setEmojiData(listemojiData)
   };
 
-  // const handleInc = (id) => {
-  //   const emoji = listemojiData.map((smiley) => {
-  //     if (smiley.id == id) {
-  //       console.log(smiley.count++);
-  //      return smiley.count++;
-  //     }
-  //     return smiley;
-  //   });
-  //   setEmojiData(emoji);
-  // };
+  handleInc = (id) => {
+    const emoji = listemojiData.map((smiley) => {
+      if (smiley.id == id) {
+        console.log(smiley.count++);
+       return smiley.count++;
+      }
+      return smiley;
+    });
+    setEmojiData(emoji);
+  };
 
   return (
     <>
