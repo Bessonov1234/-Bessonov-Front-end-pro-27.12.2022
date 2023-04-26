@@ -1,4 +1,4 @@
-const smilesData = {
+let smilesData = {
   smileys: [
     { id: 1, symbol: "🙂", count: 0 },
     { id: 2, symbol: "🙁", count: 0 },
@@ -7,4 +7,4 @@ const smilesData = {
   winners: [],
 };
 
-export default smilesData
+export default smilesData;

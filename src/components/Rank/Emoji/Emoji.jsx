@@ -2,22 +2,32 @@ import smilesData from "./mockData/data";
 import classes from "./Emoji.module.scss";
 import { useState } from "react";
 import Smiles from "./Smiles/Smiles";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 const EmojiRank = () => {
   const [emojiData, setEmojiData] = useState(smilesData);
   const listemojiData = emojiData.smileys;
-
+  let listemojiData1 = emojiData;
   const handleInc = (id) => {
-    console.log(id);
-    listemojiData.map((el) => {
-      if (el.id == id) {
-        console.log(el.id);
-        return { ...el, count: el.count + 1 };
+    listemojiData.forEach((el) => {
+      console.log(listemojiData);
+      if (id == el.id) {
+         el.count++
       }
     });
-    setEmojiData(listemojiData);
+    setEmojiData(listemojiData)
   };
+
+  // const handleInc = (id) => {
+  //   const emoji = listemojiData.map((smiley) => {
+  //     if (smiley.id == id) {
+  //       console.log(smiley.count++);
+  //      return smiley.count++;
+  //     }
+  //     return smiley;
+  //   });
+  //   setEmojiData(emoji);
+  // };
 
   return (
     <>
@@ -26,13 +36,14 @@ const EmojiRank = () => {
           <div className={classes.display}>
             <div className={classes.display__wrap__for__smiles}>
               <div className={classes.display__wrap__for__smiles__wrap}>
-                {smilesData.smileys.map((id, symbol, count) => {
+                {smilesData.smileys.map((el) => {
                   return (
                     <Smiles
                       key={uuidv4()}
-                      symbol={symbol}
-                      count={count}
-                      onClick={handleInc(id)}
+                      emoji={el.symbol}
+                      count={el.count}
+                      id={el.id}
+                      handleInc={() => handleInc(el.id)}
                     />
                   );
                 })}

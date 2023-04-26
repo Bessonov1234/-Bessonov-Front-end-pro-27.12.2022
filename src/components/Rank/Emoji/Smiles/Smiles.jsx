@@ -1,11 +1,19 @@
 import smilesData from "../mockData/data";
 
-const Smiles = (props, handleInc) => {
+const Smiles = (props, { handleInc }) => {
   return (
     <>
-      <span>{props.count}</span>
-      {props.emoji}
-      <button onClick={()=>handleInc(props.id)}>TAB</button>
+      <span>id - {props.id}</span>
+      <br />
+      <br />
+      <br />
+      <span>count - {props.count}</span>
+      <br />
+      <span>{props.emoji}</span>
+      <br />
+      <br />
+      <br />
+      <button onClick={props.handleInc}>TAB</button>
     </>
   );
 };
