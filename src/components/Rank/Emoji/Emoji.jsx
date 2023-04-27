@@ -4,19 +4,26 @@ import { useState } from "react";
 import Smiles from "./Smiles/Smiles";
 import { v4 as uuidv4 } from "uuid";
 const EmojiRank = () => {
-  const [emojiData, setEmojiData] = useState(smilesData);
-  const listemojiData = emojiData.smileys;
-
+  const [emojiData, setEmojiData] = useState(smilesData.smileys);
   const handleInc = (id) => {
-    console.log(true);
-    const copyList = [...listemojiData];
-    console.log(copyList);
-    copyList.map((el) => {
-      return { ...el };
+    // const copyList = [...emojiData];
+    const copyList = emojiData.map((el) => {
+      if (el.id == id) {
+        return { ...el, count: el.count + 1 };
+      }
+      return el;
     });
     setEmojiData(copyList);
   };
 
+  const getresult = () => {
+    let copyList = emojiData.sort((a, b) => b.count - a.count);
+    const winner = copyList[0].symbol;
+    copyList = {
+      ...emojiData,
+      winner: [winner],
+    };
+  };
   return (
     <>
       <div className={classes.root__wrap}>
@@ -24,7 +31,7 @@ const EmojiRank = () => {
           <div className={classes.display}>
             <div className={classes.display__wrap__for__smiles}>
               <div className={classes.display__wrap__for__smiles__wrap}>
-                {listemojiData.map((el) => {
+                {emojiData.map((el) => {
                   return (
                     <Smiles
                       key={uuidv4()}
@@ -36,6 +43,7 @@ const EmojiRank = () => {
                   );
                 })}
               </div>
+              <button onClick={getresult}>Winner {emojiData.winner}</button>
             </div>
           </div>
         </div>
