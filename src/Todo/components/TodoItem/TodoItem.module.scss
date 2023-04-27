@@ -1,0 +1,36 @@
+.todo {
+  display: flex;
+  gap: 10px;
+  &__item {
+    border: 2px solid black;
+    padding: 1em;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: center;
+    min-width: 300px;
+  }
+}
+.button {
+  border: 2px solid black;
+  padding: 1em;
+  border-radius: 10px;
+  font-size: 13px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  &:active {
+    background-color: black;
+    color: #fff;
+  }
+  &__wrap {
+  }
+
+  &__input__checked {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: center;
+  }
+}
