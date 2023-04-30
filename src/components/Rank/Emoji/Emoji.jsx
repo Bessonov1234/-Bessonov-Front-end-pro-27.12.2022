@@ -3,10 +3,10 @@ import classes from "./Emoji.module.scss";
 import { useState } from "react";
 import Smiles from "./Smiles/Smiles";
 import { v4 as uuidv4 } from "uuid";
+import Winner from "../Winner/Winner";
 const EmojiRank = () => {
   const [emojiData, setEmojiData] = useState(smilesData.smileys);
   const handleInc = (id) => {
-    // const copyList = [...emojiData];
     const copyList = emojiData.map((el) => {
       if (el.id == id) {
         return { ...el, count: el.count + 1 };
@@ -16,13 +16,13 @@ const EmojiRank = () => {
     setEmojiData(copyList);
   };
 
-  const getresult = () => {
-    let copyList = emojiData.sort((a, b) => b.count - a.count);
-    const winner = copyList[0].symbol;
-    copyList = {
-      ...emojiData,
-      winner: [winner],
-    };
+  const getresult = (count) => {
+    console.log(count);
+    const sortedSmileys = [...count].sort((a, b) => b.count - a.count);
+    console.log(sortedSmileys);
+    const maxCount = sortedSmileys[0].count;
+    const winners = sortedSmileys.filter((smiley) => smiley.count === maxCount);
+    setEmojiData(winners);
   };
   return (
     <>
@@ -43,7 +43,11 @@ const EmojiRank = () => {
                   );
                 })}
               </div>
-              <button onClick={getresult}>Winner {emojiData.winner}</button>
+              {emojiData.some((el) => el.count > 0) ? (
+                <Winner title={"Winner"} winner={() => getresult(emojiData)} />
+              ) : (
+                <p>Please vote at least once to see the result</p>
+              )}
             </div>
           </div>
         </div>
