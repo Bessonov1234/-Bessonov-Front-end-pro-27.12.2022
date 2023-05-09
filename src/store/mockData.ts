@@ -1,5 +1,5 @@
-import { uuid } from "uuidv4";
- const data = [
+import { CHOOSE_BURGER } from "./action";
+const data = [
   {
     id: 1,
     burger: "small",
@@ -58,4 +58,19 @@ import { uuid } from "uuidv4";
   },
 ];
 
-export default data
+export default data;
+
+export const initialState = data;
+console.log(initialState);
+
+export const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case CHOOSE_BURGER: {
+      console.log(action);
+      console.log(state);
+    }
+
+    default:
+      break;
+  }
+};

@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+.root {
+  max-width: 100%;
+}
+.conteiner {
+  margin: 0 auto;
+  max-width: 1140px;
+}
+.display {
+  background-color: rgb(211, 188, 57);
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 50em;
+  min-height: 50rem;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
