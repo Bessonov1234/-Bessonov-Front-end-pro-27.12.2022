@@ -1,1 +1,0 @@
- export const CHOOSE_BURGER = "CHOOSE_BURGER";
