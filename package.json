@@ -1,5 +1,5 @@
 {
-  "name": "fe-pro-27.12.2022-belinskii",
+  "name": "hevryk_fe-pro_27.12.22",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,13 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.0",
-    "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.13.0",
-    "formik": "^2.2.9",
+    "@reduxjs/toolkit": "^1.9.5",
+    "bootstrap": "^5.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "yup": "^1.1.1"
+    "react-redux": "^8.0.5",
+    "sass": "^1.62.1",
+    "scss": "^0.2.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
